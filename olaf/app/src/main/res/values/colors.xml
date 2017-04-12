@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2685f7</color>
+    <color name="colorPrimaryLight">#2695F7</color>
+    <color name="colorPrimaryLightLight">#2686f7</color>
+    <color name="colorPrimaryDark">#2685f7</color>
+    <color name="colorAccent">#0082fe</color>
+
+
+
+    <color name="top_bg">#f8f8f8</color>
+
+    <color name="order_detail_money">#18a3d4</color>
+    <color name="background_2">#EBEBEB</color>
+    <color name="background">#f1f1f1</color>
+    <color name="btnDisable">#D6D7D7</color>
+    <color name="btnWelcome1">#69D8B0</color>
+    <color name="btnWelcome2">#19B2F9</color>
+    <color name="btnWelcome3">#FFFFFF</color>
+    <color name="main_bg">#f9f9f8</color>
+
+    <color name="shoukuan_bg">#6dc2ff</color>
+    <color name="shoukuan_money">#94b5c5</color>
+
+    <color name="shoukuan_font">#555555</color>
+
+    <color name="saoma_font">#404040</color>
+    <color name="saoma_money_font">#45709d</color>
+
+    <color name="radio_button_selected_color">#ff33b5e5</color>
+    <!-- <color name="radio_button_unselected_color">@android:color/transparent</color> -->
+    <color name="radio_button_unselected_color">#ff0000</color>
+    <color name="radio_stroke_color">#4A90E2</color>
+    <color name="blance_able">#f7910d</color>
+    <color name="blance_unable">#fb6142</color>
+    <color name="text_grey_color">#555555</color>
+    <color name="text_blue_color">#0aa9f3</color>
+    <color name="text_rate_blue_color">#88c9e1</color>
+    <color name="text_index_yellow_color">#FCC56F</color>
+    <color name="text_label_color">#222222</color>
+    <color name="text_label_color2">#999999</color>
+    <color name="text_value_color">#555555</color>
+    <color name="tips_background">#AAF4C93E</color>
+    <color name="tips_background2">#fce9d5</color>
+    <color name="tips_text_color">#E3980A</color>
+    <color name="tips_text_color2">#EF6B43</color>
+    <color name="payFail_text_color">#fefefe</color>
+    <color name="Transparent">#60000000</color>
+
+    <color name="Logistic_0">#f98324</color>
+    <color name="Logistic_1">#1eac75</color>
+    <color name="Logistic_2">#df1024</color>
+    <color name="Logistic_3">#999999</color>
+    <color name="moneyColor">#fba866</color>
+    <color name="fee_border_grey">#D0D0D0</color>
+    <color name="fee_background_grey">#EFECEC</color>
+    <color name="fee_border_blue">#00A0EA</color>
+    <color name="fee_background_bg">#F6AE3C</color>
+    <color name="colorButtonYellow">#F6AE3C</color>
+    <color name="colorButtonYellowDark">#EEA32D</color>
+    <color name="index_money">#F99C0A</color>
+
+    <color name="refresh_color_1">#00A0EA</color>
+    <color name="refresh_color_2">#F6AE3C</color>
+    <color name="refresh_color_3">#FC5250</color>
+    <color name="refresh_color_4">#000000</color>
+
+    <color name="mine_tipsimage_color">#F9A41E</color>
+    <color name="balance_color1">#F99C0A</color>
+    <color name="balance_color2">#00A0EA</color>
+    <color name="balance_color3">#FC5250</color>
+
+
+    <color name="divider">#E5E5E5</color>
+    <color name="shadow">#AAEBEBEB</color>
+    <color name="common_bg">#FAFAFA</color>
+    <color name="content_bg">#F3F3F3</color>
+    <color name="gray">#8c8c8c</color>
+    <color name="bg_gray">#f0f0f0</color>
+    <color name="gray_deep">#5c5c5c</color>
+    <color name="alpha_gray">#CC646464</color>
+    <color name="theme_gray">#646464</color>
+    <color name="fee_rate_value">#0BAAF3</color>
+    <color name="finance_set_state">#ef6b43</color>
+    <color name="finance_set_checking">#757575</color>
+    <color name="finance_set_tips_bg">#bfc2c4</color>
+    <color name="term_state_pause">#ff5742</color>
+    <color name="index_tab_text">#4D4D4D</color>
+
+    <color name="color_wheel_sel">@color/colorPrimary</color>
+    <color name="color_order_detail">@color/order_detail_money</color>
+    <color name="color_wheel_unsel">#9aaec3</color>
+</resources>
+

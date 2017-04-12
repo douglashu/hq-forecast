@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://code.alibabatech.com/schema/dubbo  
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	<dubbo:provider timeout="30000" retries="0" filter="default,hqfilter"/>
+	<dubbo:protocol name="dubbo" port="${dubbo.port}"  dispatcher="execution" threadpool="cached"/> 
+	
+   	<dubbo:service interface="com.hq.elva.rpc.facade.TBasAreaFacade" ref="tBasAreaFacade" version="1.0" />
+   	<bean id="tBasAreaFacade" class="com.hq.elva.rpc.facade.impl.TBasAreaFacadeImpl" />
+   	
+   	<dubbo:service interface="com.hq.elva.rpc.facade.TBasBankCityFacade" ref="tBasBankCityFacade" version="1.0" />
+   	<bean id="tBasBankCityFacade" class="com.hq.elva.rpc.facade.impl.TBasBankCityFacadeImpl" />
+   	<dubbo:service interface="com.hq.elva.rpc.facade.TBasBankProvFacade" ref="tBasBankProvFacade" version="1.0" />
+   	<bean id="tBasBankProvFacade" class="com.hq.elva.rpc.facade.impl.TBasBankProvFacadeImpl" />
+   	<dubbo:service interface="com.hq.elva.rpc.facade.TBasBkcdFacade" ref="tBasBkcdFacade" version="1.0" />
+   	<bean id="tBasBkcdFacade" class="com.hq.elva.rpc.facade.impl.TBasBkcdFacadeImpl" />
+   	<dubbo:service interface="com.hq.elva.rpc.facade.TBasBkinFacade" ref="tBasBkinFacade" version="1.0" />
+   	<bean id="tBasBkinFacade" class="com.hq.elva.rpc.facade.impl.TBasBkinFacadeImpl" />
+   	<dubbo:service interface="com.hq.elva.rpc.facade.TBasConfigFacade" ref="tBasConfigFacade" version="1.0" />
+   	<bean id="tBasConfigFacade" class="com.hq.elva.rpc.facade.impl.TBasConfigFacadeImpl" />
+   	<dubbo:service interface="com.hq.elva.rpc.facade.TBasDictFacade" ref="tBasDictFacade" version="1.0" />
+   	<bean id="tBasDictFacade" class="com.hq.elva.rpc.facade.impl.TBasDictFacadeImpl" />
+   	<dubbo:service interface="com.hq.elva.rpc.facade.TBasMccFacade" ref="tBasMccFacade" version="1.0" />
+   	<bean id="tBasMccFacade" class="com.hq.elva.rpc.facade.impl.TBasMccFacadeImpl" />
+   	<dubbo:service interface="com.hq.elva.rpc.facade.TBasUfitFacade" ref="tBasUfitFacade" version="1.0" />
+   	<bean id="tBasUfitFacade" class="com.hq.elva.rpc.facade.impl.TBasUfitFacadeImpl" />
+   	<dubbo:service interface="com.hq.elva.rpc.facade.TBasYpetFacade" ref="tBasYpetFacade" version="1.0" />
+   	<bean id="tBasYpetFacade" class="com.hq.elva.rpc.facade.impl.TBasYpetFacadeImpl" />
+	<dubbo:service interface="com.hq.elva.rpc.facade.TBasBktypeFacade" ref="tBasBktypeFacade" version="1.0" />
+	<bean id="tBasBktypeFacade" class="com.hq.elva.rpc.facade.impl.TBasBktypeFacadeImpl" />
+</beans>  

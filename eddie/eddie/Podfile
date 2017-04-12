@@ -1,0 +1,28 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
+
+def swift_pods
+	pod 'Alamofire', '~> 4.0.1'
+    pod 'SwiftyJSON', '~> 3.1.1'
+    pod 'SnapKit', '~> 3.0.2'
+    pod 'RxSwift', '~> 3.0.0'
+    pod 'Log', '~> 1.0'
+
+end
+
+def oc_pods
+    pod 'MBProgressHUD', '~> 0.9.2'
+    pod 'MJRefresh', '~> 3.1.0'
+    pod 'MMPopupView', '~> 1.7.2'
+end
+
+def other
+
+end
+
+target 'eddie' do
+	swift_pods
+	oc_pods
+	other
+end

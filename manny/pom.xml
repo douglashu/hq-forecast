@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.hq.parent</groupId>
+        <artifactId>project-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.hq.manny</groupId>
+    <artifactId>manny</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>manny</name>
+    <packaging>pom</packaging>
+    <modules>
+        <module>file-handler</module>
+        <module>upd</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.hq.scrati</groupId>
+                <artifactId>framework</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hq.scrati</groupId>
+                <artifactId>framework-web</artifactId>
+                <version>${framework.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

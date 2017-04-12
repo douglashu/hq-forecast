@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.elva.dao.generate.TBasAreaMapper">
+  <resultMap id="BaseResultMap" type="com.hq.elva.entity.generate.TBasArea">
+    <id column="area_code" jdbcType="VARCHAR" property="areaCode" />
+    <result column="area_name" jdbcType="VARCHAR" property="areaName" />
+    <result column="up_area_code" jdbcType="VARCHAR" property="upAreaCode" />
+    <result column="area_level" jdbcType="INTEGER" property="areaLevel" />
+    <result column="area_pinyin" jdbcType="VARCHAR" property="areaPinyin" />
+    <result column="area_short_name" jdbcType="VARCHAR" property="areaShortName" />
+    <result column="cen_longitude" jdbcType="VARCHAR" property="cenLongitude" />
+    <result column="cen_latitude" jdbcType="VARCHAR" property="cenLatitude" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    area_code, area_name, up_area_code, area_level, area_pinyin, area_short_name, cen_longitude, 
+    cen_latitude
+  </sql>
+  <select id="selectByExample" parameterType="com.hq.elva.entity.generate.TBasAreaExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_bas_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_bas_area
+    where area_code = #{areaCode,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_bas_area
+    where area_code = #{areaCode,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.hq.elva.entity.generate.TBasAreaExample">
+    delete from t_bas_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hq.elva.entity.generate.TBasArea">
+    insert into t_bas_area (area_code, area_name, up_area_code, 
+      area_level, area_pinyin, area_short_name, 
+      cen_longitude, cen_latitude)
+    values (#{areaCode,jdbcType=VARCHAR}, #{areaName,jdbcType=VARCHAR}, #{upAreaCode,jdbcType=VARCHAR}, 
+      #{areaLevel,jdbcType=INTEGER}, #{areaPinyin,jdbcType=VARCHAR}, #{areaShortName,jdbcType=VARCHAR}, 
+      #{cenLongitude,jdbcType=VARCHAR}, #{cenLatitude,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hq.elva.entity.generate.TBasArea">
+    insert into t_bas_area
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="areaCode != null">
+        area_code,
+      </if>
+      <if test="areaName != null">
+        area_name,
+      </if>
+      <if test="upAreaCode != null">
+        up_area_code,
+      </if>
+      <if test="areaLevel != null">
+        area_level,
+      </if>
+      <if test="areaPinyin != null">
+        area_pinyin,
+      </if>
+      <if test="areaShortName != null">
+        area_short_name,
+      </if>
+      <if test="cenLongitude != null">
+        cen_longitude,
+      </if>
+      <if test="cenLatitude != null">
+        cen_latitude,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="areaCode != null">
+        #{areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaName != null">
+        #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="upAreaCode != null">
+        #{upAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaLevel != null">
+        #{areaLevel,jdbcType=INTEGER},
+      </if>
+      <if test="areaPinyin != null">
+        #{areaPinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="areaShortName != null">
+        #{areaShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="cenLongitude != null">
+        #{cenLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="cenLatitude != null">
+        #{cenLatitude,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hq.elva.entity.generate.TBasAreaExample" resultType="java.lang.Long">
+    select count(*) from t_bas_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update t_bas_area
+    <set>
+      <if test="record.areaCode != null">
+        area_code = #{record.areaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.areaName != null">
+        area_name = #{record.areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.upAreaCode != null">
+        up_area_code = #{record.upAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.areaLevel != null">
+        area_level = #{record.areaLevel,jdbcType=INTEGER},
+      </if>
+      <if test="record.areaPinyin != null">
+        area_pinyin = #{record.areaPinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.areaShortName != null">
+        area_short_name = #{record.areaShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cenLongitude != null">
+        cen_longitude = #{record.cenLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cenLatitude != null">
+        cen_latitude = #{record.cenLatitude,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update t_bas_area
+    set area_code = #{record.areaCode,jdbcType=VARCHAR},
+      area_name = #{record.areaName,jdbcType=VARCHAR},
+      up_area_code = #{record.upAreaCode,jdbcType=VARCHAR},
+      area_level = #{record.areaLevel,jdbcType=INTEGER},
+      area_pinyin = #{record.areaPinyin,jdbcType=VARCHAR},
+      area_short_name = #{record.areaShortName,jdbcType=VARCHAR},
+      cen_longitude = #{record.cenLongitude,jdbcType=VARCHAR},
+      cen_latitude = #{record.cenLatitude,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hq.elva.entity.generate.TBasArea">
+    update t_bas_area
+    <set>
+      <if test="areaName != null">
+        area_name = #{areaName,jdbcType=VARCHAR},
+      </if>
+      <if test="upAreaCode != null">
+        up_area_code = #{upAreaCode,jdbcType=VARCHAR},
+      </if>
+      <if test="areaLevel != null">
+        area_level = #{areaLevel,jdbcType=INTEGER},
+      </if>
+      <if test="areaPinyin != null">
+        area_pinyin = #{areaPinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="areaShortName != null">
+        area_short_name = #{areaShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="cenLongitude != null">
+        cen_longitude = #{cenLongitude,jdbcType=VARCHAR},
+      </if>
+      <if test="cenLatitude != null">
+        cen_latitude = #{cenLatitude,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where area_code = #{areaCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hq.elva.entity.generate.TBasArea">
+    update t_bas_area
+    set area_name = #{areaName,jdbcType=VARCHAR},
+      up_area_code = #{upAreaCode,jdbcType=VARCHAR},
+      area_level = #{areaLevel,jdbcType=INTEGER},
+      area_pinyin = #{areaPinyin,jdbcType=VARCHAR},
+      area_short_name = #{areaShortName,jdbcType=VARCHAR},
+      cen_longitude = #{cenLongitude,jdbcType=VARCHAR},
+      cen_latitude = #{cenLatitude,jdbcType=VARCHAR}
+    where area_code = #{areaCode,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByExampleWithRowbounds" parameterType="com.hq.elva.entity.generate.TBasAreaExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_bas_area
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>

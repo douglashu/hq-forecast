@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="menuitemview">
+        <attr name="itemText" format="string"/>
+        <attr name="itemImage" format="reference"/>
+        <attr name="menuTo" format="string"/>
+        <attr name="showRight" format="boolean"/>
+        <attr name="labelHint" format="string"/>
+        <attr name="labelText" format="string"/>
+        <attr name="funcText" format="string"/>
+        <attr name="itemRightText" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="TextEdittextView">
+        <attr name="type" format="enum">
+            <enum name="select" value="1"/>
+            <enum name="text" value="2"/>
+            <enum name="editText" value="3"/>
+            <enum name="editText_money" value="4"/>
+            <enum name="editText_number" value="5"/>
+            <enum name="editText_pwd" value="6"/>
+            <enum name="editText_numPwd" value="7"/>
+        </attr>
+        <attr name="maxLength" format="integer"/>
+        <attr name="maxLines" format="integer"/>
+        <attr name="notEmpty" format="boolean"/>
+        <attr name="emptyMessage" format="string"/>
+        <attr name="regexp" format="string"/>
+        <attr name="regErrorMessage" format="string"/>
+        <attr name="selectHint" format="string"/>
+        <attr name="label" format="string"/>
+        <attr name="subLabel" format="string"/>
+        <attr name="hint" format="string"/>
+        <attr name="text" format="string"/>
+        <attr name="textColor" format="reference"/>
+        <attr name="labelColor" format="reference"/>
+        <attr name="labelSize" format="dimension"/>
+        <attr name="editTextSize" format="dimension"/>
+        <attr name="labelIcon" format="reference"/>
+        <attr name="unitText" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="FuncBtnView">
+        <attr name="funcIcon" format="reference"/>
+        <attr name="funcTitle" format="string"/>
+        <attr name="funcTitleSize" format="integer"/>
+        <attr name="funcSubTitle" format="string"/>
+        <attr name="funcSubTitleSize" format="integer"/>
+        <attr name="funPbocType" format="enum">
+            <enum name="QB" value="2"/>
+            <enum name="SALE" value="1"/>
+        </attr>
+        <attr name="funcType" format="enum">
+            <enum name="H" value="1"/>
+            <enum name="V" value="2"/>
+        </attr>
+        <attr name="funcTo" format="string"/>
+        <attr name="funcBackground" format="reference|color"/>
+        <attr name="funcTitleColor" format="color"/>
+        <attr name="funcSubTitleColor" format="color"/>
+        <attr name="FuncFilter" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="ChangeColorIconView">
+        <attr name="changeColorIconViewIcon" format="reference"/>
+        <attr name="changeColorIconViewColor" format="reference|color"/>
+        <attr name="changeColorIconViewText" format="string"/>
+        <attr name="changeColorIconViewtext_size" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="ICheckText">
+        <attr name="ict_text" format="string"/>
+        <attr name="ict_label" format="string"/>
+        <attr name="ict_hint" format="string"/>
+        <attr name="ict_emptyMessage" format="string"/>
+        <attr name="ict_isNotEmpty" format="boolean"/>
+        <attr name="ict_pattern" format="string"/>
+        <attr name="ict_patternErrorMessage" format="string"/>
+        <attr name="ict_enable" format="boolean"/>
+        <attr name="ict_hintColor" format="reference"/>
+        <attr name="ict_textColor" format="reference"/>
+        <attr name="ict_labelColor" format="reference"/>
+        <attr name="ict_textSize" format="dimension"/>
+        <attr name="ict_labelSize" format="dimension"/>
+        <attr name="ict_left_icon" format="reference"/>
+        <attr name="ict_maxLength" format="integer"/>
+        <attr name="ict_sigleLine" format="boolean"/>
+        <attr name="ict_lines" format="integer"/>
+        <attr name="ict_menu_forward" format="string"/>
+        <attr name="ict_menu_right_icon" format="reference"/>
+        <attr name="ict_edittext_type" format="enum">
+            <enum name="text" value="1"/>
+            <enum name="money" value="2"/>
+            <enum name="number" value="3"/>
+            <enum name="textPasswd" value="4"/>
+            <enum name="numberPasswd" value="5"/>
+        </attr>
+        <attr name="ict_edittext_unit" format="string"/>
+        <attr name="ict_edittext_subLabel" format="string"/>
+        <attr name="ict_edittext_isFormat" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="PosDescText">
+        <attr name="textLabel" format="string"/>
+        <attr name="textValue" format="string"/>
+    </declare-styleable>
+</resources>

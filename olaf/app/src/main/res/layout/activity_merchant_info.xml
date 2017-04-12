@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context="com.hq.app.olaf.ui.activity.about.MerchantInfoActivity">
+
+
+
+
+        <include layout="@layout/layout_toolbar"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/checkedGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="商户号"/>
+
+                    <TextView
+                        android:id="@+id/mercId"
+                        style="@style/input_select_gray"
+                        android:paddingRight="16dp"
+                        android:text="1111111"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                style="@style/input_layout">
+
+                <TextView
+                    style="@style/input_lable"
+                    android:text="商户名"/>
+
+                <TextView
+                    android:id="@+id/mercName"
+                    style="@style/input_select_gray"
+                    android:paddingRight="16dp"
+                    android:text=""/>
+
+            </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="商户简称"/>
+
+                    <TextView
+                        android:id="@+id/mercShotName"
+                        style="@style/input_select_gray"
+                        android:paddingRight="16dp"
+                        android:text=""/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="所在地区"/>
+
+                    <TextView
+                        android:id="@+id/busiLicenseProvAndCity"
+                        style="@style/input_select_gray"
+                        android:paddingRight="16dp"
+                        android:text=""/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="详细地址"/>
+
+                    <TextView
+                        android:id="@+id/mercAddr"
+                        style="@style/input_select_gray"
+                        android:paddingRight="16dp"
+                        android:text=""/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="经营范围"/>
+
+                    <TextView
+                        android:id="@+id/busiScope"
+                        style="@style/input_select_gray"
+                        android:paddingRight="16dp"
+                        android:text=""/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    style="@style/input_layout"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="联系人"/>
+
+                    <TextView
+                        android:id="@+id/contactName"
+                        style="@style/input_select_gray"
+                        android:paddingRight="16dp"
+                        android:text=""/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="手机号"/>
+
+                    <TextView
+                        android:id="@+id/contactMobile"
+                        style="@style/input_select_gray"
+                        android:paddingRight="16dp"
+                        android:text=""/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+</LinearLayout>

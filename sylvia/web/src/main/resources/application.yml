@@ -1,0 +1,19 @@
+spring:
+#环境 dev product
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      host: ${mongo.host}
+      port: ${mongo.port}
+      database: sylvia
+  redis:
+    host: ${redis.host}
+    port: ${redis.port}
+#端口
+server:
+  port: 8083
+logging:
+  file: log/sylvia-web.log
+esc:
+  url: ${esc.url}

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hq.app.olaf.ui.activity.shoukuan.ShoukuanActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/top_bg">
+
+            <include layout="@layout/layout_toolbar_shoukuan" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/top_bg"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:background="@color/white">
+
+
+                <TextView
+                    android:id="@+id/value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"
+                    android:text="0.00"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="36sp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="输入金额"
+
+                        android:textColor="@color/shoukuan_font"
+                        android:textStyle="normal"
+                        android:paddingLeft="5dp"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_sum"
+                        android:paddingRight="10dp"
+                        android:gravity="center_vertical|right"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/shoukuan_font"
+                        android:textStyle="normal"
+                        android:textSize="14sp"
+                        android:maxLines="1"/>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:weightSum="3"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/one"
+                    style="@style/shoukuanTextStyle"
+                    android:text="1"
+                    />
+
+
+                <TextView
+                    android:id="@+id/two"
+                    style="@style/shoukuanTextStyle"
+                    android:text="2"
+                    />
+
+                <TextView
+                    android:id="@+id/three"
+                    style="@style/shoukuanTextStyle"
+                    android:text="3"
+                    />
+
+                <TextView
+                    android:id="@+id/delete"
+                    style="@style/shoukuanCMDStyle"
+                    android:text="删除"
+                    />
+            </LinearLayout >
+
+
+            <LinearLayout
+                android:id="@+id/second"
+                android:weightSum="4"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/four"
+                    style="@style/shoukuanTextStyle"
+                    android:text="4"/>
+
+
+                <TextView
+                    android:id="@+id/five"
+                    style="@style/shoukuanTextStyle"
+                    android:text="5"
+                    />
+
+                <TextView
+                    android:id="@+id/six"
+                    style="@style/shoukuanTextStyle"
+                    android:text="6"
+                    />
+
+                <TextView
+                    android:id="@+id/clear"
+                    style="@style/shoukuanCMDStyle"
+                    android:text="清空"
+                    />
+            </LinearLayout >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:weightSum="4"
+                android:layout_weight="1"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_weight="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/third"
+                            android:weightSum="4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+
+                            <TextView
+                                android:id="@+id/seven"
+                                style="@style/shoukuanTextStyle"
+                                android:text="7"/>
+
+                            <TextView
+                                android:id="@+id/eight"
+                                style="@style/shoukuanTextStyle"
+                                android:text="8"
+                                />
+
+                            <TextView
+                                android:id="@+id/nine"
+                                style="@style/shoukuanTextStyle"
+                                android:text="9"
+                                />
+
+                            <ImageView
+                                android:id="@+id/forwardSaoMaActivity2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:paddingLeft="18dp"
+                                android:paddingRight="18dp"
+                                android:paddingTop="30dp"
+                                android:src="@drawable/icon_fukuan"
+                                android:layout_gravity="center|bottom"/>
+
+
+                        </LinearLayout >
+
+
+                        <LinearLayout
+                            android:weightSum="4"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+
+                            <TextView
+                                android:id="@+id/zero"
+                                style="@style/shoukuanTextStyle"
+                                android:text="0"
+                                />
+
+                            <TextView
+                                android:id="@+id/point"
+                                style="@style/shoukuanTextStyle"
+                                android:text="."
+                                />
+
+                            <TextView
+                                android:id="@+id/add"
+                                style="@style/shoukuanTextStyle"
+                                android:text="+"
+                                />
+
+                            <TextView
+                                android:id="@+id/forwardSaoMaActivity"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:textColor="@color/shoukuan_font"
+                                android:textSize="18sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_weight="1"
+                                android:background="@color/white"
+                                android:text="收款"
+                                android:layout_gravity="top"
+                                android:gravity="center|top"
+                                />
+
+                        </LinearLayout >
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

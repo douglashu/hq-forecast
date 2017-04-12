@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">慧钱</string>
+    <string name="net_erro_tip">请检查网络</string>
+
+    <!--Index-->
+    <string name="index">首页</string>
+    <string name="order">流水</string>
+    <string name="message">消息</string>
+    <string name="application">活动</string>
+    <string name="mine">我的</string>
+    <!--登录-->
+    <string name="agreement_kayou">《卡友支付商户协议》</string>
+    <string name="agree">同意</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="forget_password_tip">忘记密码？</string>
+    <string name="register_tip">还没有账号？赶快注册吧</string>
+    <string name="get_code">获取验证码</string>
+    <string name="vcode">验证码</string>
+    <string name="phone_no">手机号码</string>
+    <string name="binding_bankcard">已绑定任意银行卡号</string>
+    <string name="password">密码</string>
+    <string name="login_pwd">登录密码</string>
+    <string name="new_pwd">新密码</string>
+    <string name="orginal_login_pwd">原登录密码</string>
+    <string name="new_login_pwd">新登录密码</string>
+    <string name="hint_input">请输入登录密码</string>
+    <string name="pay_pwd">支付密码</string>
+    <string name="submit">提    交</string>
+    <string name="dologin">去    登    录</string>
+    <string name="hint_phone_no">请输入注册手机号</string>
+    <string name="hint_passcode">请输入验证码</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="progress_dialog">请等待...</string>
+    <string name="please_wait">请稍候…</string>
+    <string name="loading_data">正在加载...</string>
+</resources>

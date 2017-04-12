@@ -1,0 +1,20 @@
+spring:
+#环境 dev product
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      host: ${mongo.host}
+      port: ${mongo.port}
+      database: crash
+  redis:
+    host: ${redis.host}
+    port: ${redis.port}
+#端口
+server:
+  port: 8081
+  context-path: /crash
+logging:
+  file: log/crash-web.log
+esc:
+  url: ${esc.url}

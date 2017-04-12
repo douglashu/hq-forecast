@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:src="@drawable/icon_infodialog_close"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="10dp"
+            android:text="提示"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_medium"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lineSpacingExtra="6dp"
+        android:paddingBottom="32dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="为保障您的资金安全，请先开户绑定银行卡，便于您管理账户资金。"
+        android:textColor="@color/gray"/>
+    <View
+        style="@style/line_h"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_white_block_bg"
+                android:text="取消"
+                android:textColor="@color/text_grey_color"
+                android:textSize="@dimen/text_size_medium"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/confirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_white_block_bg"
+                android:text="确定"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_medium"/>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/spacer"
+            style="@style/line_v"
+            android:visibility="gone"
+            android:layout_height="42dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+</LinearLayout>

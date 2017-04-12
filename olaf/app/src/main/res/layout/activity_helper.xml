@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical"
+        >
+
+        <include layout="@layout/layout_toolbar"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="常见问题"
+                    android:textSize="12sp"/>
+
+                <com.hq.app.olaf.ui.widget.TextEdittextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:label="充值"
+                    app:labelIcon="@drawable/ic_application"
+                    app:type="text"/>
+
+                <com.hq.app.olaf.ui.widget.TextEdittextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:label="提现"
+                    app:labelIcon="@drawable/ic_application"
+                    app:type="text"/>
+
+                <com.hq.app.olaf.ui.widget.TextEdittextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:label="转账"
+                    app:labelIcon="@drawable/ic_application"
+                    app:type="text"/>
+
+                <com.hq.app.olaf.ui.widget.TextEdittextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:label="提额"
+                    app:labelIcon="@drawable/ic_application"
+                    app:type="text"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="理财产品"
+                    android:textSize="12sp"/>
+
+                <com.hq.app.olaf.ui.widget.TextEdittextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:label="消费理财"
+                    app:labelIcon="@drawable/ic_application"
+                    app:type="text"/>
+
+                <com.hq.app.olaf.ui.widget.TextEdittextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:label="活期"
+                    app:labelIcon="@drawable/ic_application"
+                    app:type="text"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/background"/>
+
+                <com.hq.app.olaf.ui.widget.TextEdittextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hint="请输入"
+                    app:label="官方电话"
+                    app:labelIcon="@drawable/ic_application"
+                    app:text="400-000-0000"
+                    app:type="text"/>
+
+                <com.hq.app.olaf.ui.widget.TextEdittextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hint="请输入"
+                    app:label="官方微信"
+                    app:labelIcon="@drawable/ic_application"
+                    app:type="text"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

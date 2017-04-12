@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.hq.app.olaf.ui.widget.CheckTextGroup
+        android:id="@+id/checkedGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_toolbar"/>
+
+
+        <LinearLayout
+            style="@style/input_layout"
+            android:layout_marginTop="@dimen/item_space">
+
+            <TextView
+                style="@style/input_lable"
+
+                android:text="原登录密码"/>
+
+            <com.hq.app.olaf.ui.widget.DelEditText
+                android:id="@+id/originPwd"
+                style="@style/input_text"
+                android:hint="请输入原登录密码"
+                android:inputType="textPassword"
+                android:maxLength="@integer/pwd_maxlength"
+                android:singleLine="true"
+                />
+            <ImageView
+                android:id="@+id/showEye1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="18dp"
+                android:src="@drawable/icon_eye_close"/>
+        </LinearLayout>
+
+        <View style="@style/line_h"/>
+
+
+        <LinearLayout
+            style="@style/input_layout">
+
+            <TextView
+                style="@style/input_lable"
+                android:text="新登录密码"/>
+
+            <com.hq.app.olaf.ui.widget.DelEditText
+                android:id="@+id/newPwd"
+                style="@style/input_text"
+                android:hint="请输入新登录密码"
+                android:inputType="textPassword"
+                android:maxLength="@integer/pwd_maxlength"
+                android:singleLine="true"
+                />
+            <ImageView
+                android:id="@+id/showEye2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="18dp"
+                android:src="@drawable/icon_eye_close"/>
+        </LinearLayout>
+
+        <View style="@style/line_h"/>
+
+        <Button
+            android:id="@+id/commit"
+            style="@style/colorButtonStyle"
+            android:text="提交"/>
+    </com.hq.app.olaf.ui.widget.CheckTextGroup>
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/viewLayout"
+              android:layout_width="match_parent"
+              android:layout_height="56dp"
+              android:background="@drawable/selector_menuitem_bg"
+              android:clickable="true"
+              android:descendantFocusability="blocksDescendants"
+              android:focusable="true"
+              android:gravity="center"
+              android:orientation="horizontal"
+              android:paddingRight="8dp">
+
+    <ImageView
+        android:id="@+id/leftIcon"
+        android:layout_width="28dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="0dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_mine_oprator"/>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="left|center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="菜单说明"
+        android:textColor="@color/alpha_80_black"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="right|center"
+        android:paddingBottom="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="16dp"
+        android:text="其他文字"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/rightIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_arrow_right"
+        android:visibility="visible"/>
+
+</LinearLayout>

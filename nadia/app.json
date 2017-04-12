@@ -1,0 +1,20 @@
+{
+  "basePath": "./src/pages",
+  "pages": [
+    {
+      "entry": "cashier",
+      "title": "向商户付款"
+    },
+    {
+      "entry": "ads",
+      "title": "付款成功"
+    },
+    {
+      "entry": "error",
+      "title": "出错啦"
+    }
+  ],
+  "externals": {
+    "vue": "Vue"
+  }
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xmlns:task="http://www.springframework.org/schema/task"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://code.alibabatech.com/schema/dubbo  
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+    <bean id="sdkconfig" class="com.hq.scrati.model.cfg.SDKConfig">
+        <property name="application" value="framework-test"/>
+        <property name="zookeeperAddress" value="10.8.0.29:2181"/>
+    </bean>
+   <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->  
+   <dubbo:application name="#{sdkconfig.application}"/>
+  
+   <!-- 使用zookeeper注册中心暴露服务地址 -->  
+   <dubbo:registry protocol="zookeeper" address="#{sdkconfig.zookeeperAddress}"/>
+   <context:component-scan base-package="com.hq.scrati"/>
+   	<import resource="classpath:spring-redis.xml"/>
+   	<import resource="classpath:rabbitmq-producter.xml"/>
+   
+   <dubbo:reference id="tesbTcpMapper" interface="com.hq.esc.dao.generate.TesbTcpMapper" version="1.0" timeout="3000" check="false"/>
+   <dubbo:reference id="tesbDubboMapper" interface="com.hq.esc.dao.generate.TesbDubboMapper" version="1.0" timeout="3000" check="false"/>
+   <dubbo:reference id="tesbHttpMapper" interface="com.hq.esc.dao.generate.TesbHttpMapper" version="1.0" timeout="3000" check="false"/>
+   <dubbo:reference id="tesbServiceMapper" interface="com.hq.esc.dao.generate.TesbServiceMapper" version="1.0" timeout="3000" check="false"/>
+   
+   <task:executor id="executor" pool-size="5" />
+   <task:scheduler id="scheduler" pool-size="10" />
+   <task:annotation-driven executor="executor" scheduler="scheduler" />
+
+   <bean id="protocolAdapterMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="dubboAdapter" value-ref="dubboAdapter" />
+				<entry key="httpAdapter" value-ref="httpAdapter" />
+				<entry key="httpsAdapter" value-ref="httpsAdapter" />
+				<entry key="tcpAdapter" value-ref="tcpAdapter" />
+			</map>
+		</constructor-arg>
+   </bean>
+
+</beans>  

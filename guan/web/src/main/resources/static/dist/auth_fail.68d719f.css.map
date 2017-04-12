@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///webpack:///src/pages/auth_fail/app.vue"],"names":[],"mappings":";;;;wtkDACA,kBACE,kCAAqC","file":"auth_fail.68d719f.css","sourcesContent":["\n.weui-btn_primary {\n  background-color: #03A9F4 !important;\n}\n\n\n\n// WEBPACK FOOTER //\n// webpack:///src/pages/auth_fail/app.vue"],"sourceRoot":""}

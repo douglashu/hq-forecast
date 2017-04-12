@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">library</string>
+    <string name="zxing_hq_msg_default_status">扫描客户付款码即可</string>
+    <string name="yuan">元</string>
+    <string name="payfrom">向顾客收款</string>
+    <string name="_0_00">0.00</string>
+</resources>

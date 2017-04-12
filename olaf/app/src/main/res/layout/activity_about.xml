@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_toolbar"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="141dp"
+                android:layout_height="141dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_logo"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:text="慧钱助手-商家的经营助手"/>
+
+            <TextView
+                android:id="@+id/versionCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="当前版本号：1.0.0"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/item_space"
+            android:layout_weight="4"
+            android:orientation="vertical">
+
+            <com.hq.app.olaf.ui.widget.MenuItemView
+                android:id="@+id/checkVersion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:itemText="检测新版本"/>
+
+            <View style="@style/line_h"/>
+
+            <com.hq.app.olaf.ui.widget.MenuItemView
+                android:id="@+id/help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:itemText="帮助中心"
+                app:menuTo="com.hq.app.olaf.ui.base.AnyPayHtmlActivity"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="慧钱"
+            android:textColor="#999"
+            android:textSize="11sp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="© 2017 hqast.com. All rights reserved."
+            android:textColor="#999"
+            android:textSize="11sp"/>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

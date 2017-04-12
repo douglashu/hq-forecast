@@ -1,0 +1,107 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:id="@+id/layout_opr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.hq.app.olaf.ui.widget.CheckTextGroup
+            android:id="@+id/checkedGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/input_layout"
+                android:layout_marginTop="@dimen/item_space">
+
+                <TextView
+                    style="@style/input_lable"
+                    android:text="角色"/>
+
+                <EditText
+                    android:id="@+id/oprator"
+                    style="@style/input_text"
+                    android:hint="请输入"
+                    android:enabled="false"
+                    android:lines="1"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:text=""/>
+            </LinearLayout>
+
+            <View style="@style/line_h"/>
+
+            <LinearLayout
+                style="@style/input_layout"
+                android:layout_marginTop="@dimen/item_space">
+
+                <TextView
+                    style="@style/input_lable"
+                    android:text="操作员名称"/>
+
+                <EditText
+                    android:id="@+id/opratorName"
+                    style="@style/input_text"
+                    android:enabled="false"
+                    android:hint="请输入"
+                    android:lines="1"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:text=""/>
+            </LinearLayout>
+
+            <View style="@style/line_h"/>
+
+            <LinearLayout
+                style="@style/input_layout">
+
+                <TextView
+                    style="@style/input_lable"
+                    android:text="操作员电话"/>
+
+                <EditText
+                    android:id="@+id/phoneNum"
+                    style="@style/input_text"
+                    android:hint="请输入"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:enabled="false"
+                    android:maxLength="11"
+                    android:text=""/>
+            </LinearLayout>
+            <View style="@style/line_h"/>
+            <LinearLayout
+                style="@style/input_layout">
+
+                <TextView
+                    style="@style/input_lable"
+                    android:text="退款权限"/>
+
+                <EditText
+                    android:id="@+id/refund"
+                    style="@style/input_text"
+                    android:hint="请输入"
+                    android:lines="1"
+                    android:enabled="false"
+                    android:maxLength="11"
+                    android:text=""/>
+            </LinearLayout>
+
+        </com.hq.app.olaf.ui.widget.CheckTextGroup>
+
+        <Button
+            android:id="@+id/next"
+            style="@style/redColorButtonStyle"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_20dp"
+            android:stateListAnimator="@null"
+            android:text="删 除"/>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
+

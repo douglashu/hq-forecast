@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+               http://www.springframework.org/schema/data/mongo
+            http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
+
+<!-- spring连接mongodb数据库的配置 -->
+    <mongo:mongo-client id="mongo" host="${mongodb.hostname}" port="${mongodb.port}">
+        <mongo:client-options  connections-per-host="8"
+                               threads-allowed-to-block-for-connection-multiplier="4"
+                               connect-timeout="1000"
+                               max-wait-time="1500"
+                               socket-keep-alive="true"
+                               socket-timeout="1500"
+                />
+    </mongo:mongo-client>
+
+    <mongo:db-factory  id="mongoDbFactory" dbname="upload" mongo-ref="mongo" />
+
+    <!-- 只要使用这个调用相应的方法操作 -->
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+    </bean>
+
+	<mongo:mapping-converter id="converter" />
+
+	<bean class="org.springframework.data.mongodb.gridfs.GridFsTemplate">
+		<constructor-arg ref="mongoDbFactory" />
+		<constructor-arg ref="converter" />
+	</bean>
+	<mongo:repositories base-package="com.hq.sid" />
+</beans>

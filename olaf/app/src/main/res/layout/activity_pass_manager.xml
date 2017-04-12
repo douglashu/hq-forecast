@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical"
+        >
+
+        <include layout="@layout/layout_toolbar"/>
+
+        <com.hq.app.olaf.ui.widget.MenuItemView
+            android:id="@+id/mLoginPasswd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_space"
+            app:itemText="登录密码修改"
+            app:menuTo="com.hq.app.olaf.ui.activity.passwd.ModifyLoginPwdActivity"/>
+
+        <View
+            style="@style/line_h"/>
+
+        <com.hq.app.olaf.ui.widget.MenuItemView
+            android:id="@+id/rLoginPasswd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:itemText="登录密码重置"
+            app:menuTo="com.hq.app.olaf.ui.activity.passwd.ResetLoginPwdActivity"/>
+
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

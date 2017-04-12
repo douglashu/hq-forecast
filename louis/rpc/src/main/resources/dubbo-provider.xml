@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	         http://www.springframework.org/schema/beans/spring-beans.xsd
+	         http://code.alibabatech.com/schema/dubbo
+	         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:protocol name="dubbo" port="${dubbo.port}"  dispatcher="execution" threadpool="cached" threads="5"/>
+    <dubbo:annotation package="com.hq.louis.rpc.dubbo" />
+    <dubbo:service interface="com.hq.roger.core.executor.dubbo.JobExecutor" ref="jobExecutor" version="louis-job"/>
+    <bean id="jobExecutor" class="com.hq.roger.core.executor.dubbo.impl.JobExecutorImpl"></bean>
+    <bean class="com.hq.roger.core.util.JobRpcCommUtil"/>
+</beans>
+
+

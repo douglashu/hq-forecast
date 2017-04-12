@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd 
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd 
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://code.alibabatech.com/schema/dubbo  http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+	<bean id="props" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="ignoreResourceNotFound" value="true" />
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="locations">
+			<list>
+				<value>classpath:cfg.properties</value>
+				<value>file:///project/cfg.properties</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+	<dubbo:application name="${dubbo.application}"/>
+
+	<!-- 使用zookeeper注册中心暴露服务地址 -->
+	<dubbo:registry protocol="zookeeper" address="${dubbo.zookeeper.address}"/>
+	<context:component-scan base-package="com.hq.scrati"/>
+	<import resource="classpath:spring-redis.xml"/>
+	<!--<import resource="classpath:framework_rabbitmq-producter.xml"/>-->
+	<dubbo:reference id="tesbTcpMapper" interface="com.hq.esc.dao.generate.TesbTcpMapper" version="1.0" timeout="3000" check="false"/>
+	<dubbo:reference id="tesbDubboMapper" interface="com.hq.esc.dao.generate.TesbDubboMapper" version="1.0" timeout="3000" check="false"/>
+	<dubbo:reference id="tesbHttpMapper" interface="com.hq.esc.dao.generate.TesbHttpMapper" version="1.0" timeout="3000" check="false"/>
+	<dubbo:reference id="tesbServiceMapper" interface="com.hq.esc.dao.generate.TesbServiceMapper" version="1.0" timeout="3000" check="false"/>
+
+	<task:executor id="executor" pool-size="5" />
+	<task:scheduler id="scheduler" pool-size="10" />
+	<task:annotation-driven executor="executor" scheduler="scheduler" />
+
+	<bean id="protocolAdapterMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="dubboAdapter" value-ref="dubboAdapter" />
+				<entry key="httpAdapter" value-ref="httpAdapter" />
+				<entry key="httpsAdapter" value-ref="httpsAdapter" />
+				<entry key="tcpAdapter" value-ref="tcpAdapter" />
+			</map>
+		</constructor-arg>
+	</bean>
+	<import resource="classpath:spring-mybatis.xml" />
+	<import resource="classpath:spring-dubbo-producer.xml"/>
+
+	<context:component-scan base-package="com.hq.elva" />
+
+</beans>

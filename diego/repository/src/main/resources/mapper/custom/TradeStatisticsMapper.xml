@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hq.diego.repository.dao.custom.TradeStatisticsMapper">
+
+    <select id="getMchTradeStatistics" resultType="MchTradeStatistics">
+        SELECT
+            sum(total_amount) AS totalAmount,
+            sum(receipt_amount) AS receiptAmount,
+            sum(rate_fee) AS rateFee,
+            count(*) AS tradeCount,
+            pay_channel AS payChannel,
+            trade_type AS tradeType
+        FROM
+            t_diego_trade_order
+        WHERE
+            mch_id = #{mchId}
+        AND
+            end_date &gt;= #{startDate}
+        AND
+            end_date &lt;= #{endDate}
+        AND
+            trade_state
+        IN
+            ('SUCCESS', 'REFUND')
+        GROUP BY
+            pay_channel, trade_type
+    </select>
+
+</mapper>

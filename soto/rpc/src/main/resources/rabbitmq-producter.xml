@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/rabbit
+     http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd">
+	<!--配置connection-factory，指定连接rabbit server参数 地址指向HAProty 提供的镜像集群的地址-->
+	<rabbit:connection-factory id="connectionFactory" username="${rabbitMQ.username}" password="${rabbitMQ.passWord}" host="${rabbitMQ.host}" port="${rabbitMQ.port}"/>
+	
+	<!-- 序列化 -->
+	<bean id="jsonMessageConverter"  class="com.hq.soto.demo.rabbitmq.FastJsonMessageConverter"></bean>
+		
+	<!--通过指定下面的admin信息，当前producer中的exchange和queue会在rabbitmq服务器上自动生成 -->
+	<rabbit:admin connection-factory="connectionFactory" />
+	
+	<!--定义rabbit template用于数据的接收和发送 -->
+	<rabbit:template id="amqpTemplate_hour"  connection-factory="connectionFactory" 
+	    exchange="exchange_monitorHour" reply-timeout="2000" message-converter="jsonMessageConverter"/>
+
+	<!--定义queue -->
+	<rabbit:queue name="queue_monitorHour" durable="true" auto-delete="false" exclusive="false" />
+	<!-- 采用fanout的模式，又rabbit自动复制 -->
+	<rabbit:fanout-exchange name="exchange_monitorHour" durable="true" auto-delete="false" >
+		<rabbit:bindings>
+			<rabbit:binding queue="queue_monitorHour"></rabbit:binding>
+		</rabbit:bindings>
+	</rabbit:fanout-exchange>
+	
+	
+		<!--定义rabbit template用于数据的接收和发送 -->
+	<rabbit:template id="amqpTemplate_second"  connection-factory="connectionFactory" 
+	    exchange="exchange_monitorSecond" reply-timeout="2000" message-converter="jsonMessageConverter"/>
+
+	<!--定义queue -->
+	<rabbit:queue name="queue_monitorSecond" durable="true" auto-delete="false" exclusive="false" />
+	<!-- 采用fanout的模式，又rabbit自动复制 -->
+	<rabbit:fanout-exchange name="exchange_monitorSecond" durable="true" auto-delete="false" >
+		<rabbit:bindings>
+			<rabbit:binding queue="queue_monitorSecond"></rabbit:binding>
+		</rabbit:bindings>
+	</rabbit:fanout-exchange>
+	
+	<bean id="amqpTemplateMap" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+				<entry key="amqpTemplate_hour" value-ref="amqpTemplate_hour" />
+				<entry key="amqpTemplate_second" value-ref="amqpTemplate_second" />
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>

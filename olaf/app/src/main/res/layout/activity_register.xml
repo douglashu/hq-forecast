@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_toolbar"/>
+
+        <TextView style="@style/space"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/phone_no"
+                android:paddingLeft="16dp"
+                android:textColor="#222222"
+                android:textSize="16sp"/>
+
+            <com.hq.app.olaf.ui.widget.DelPhoneEditText
+                android:id="@+id/eidt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/hint_phone_no"
+                android:paddingLeft="16dp"
+                android:inputType="numberSigned"
+                android:maxLength="13"
+                android:singleLine="true"
+                android:paddingRight="20dp"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <!--<TextView style="@style/line_h"/>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/text_code"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/vcode"
+                android:textColor="#222222"
+                android:textSize="16sp"/>
+
+            <EditText
+                android:id="@+id/eidt_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="@string/hint_passcode"
+                android:inputType="numberSigned"
+                android:maxLength="6"
+                android:textColor="@color/black"
+                android:textSize="16sp"/>
+
+            <com.hq.app.olaf.ui.widget.GetCodeButton
+                android:id="@+id/getcodebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+
+        <TextView style="@style/line_h"/>
+        <LinearLayout
+            style="@style/input_layout">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:text="新登录密码"
+                android:paddingLeft="16dp"
+                android:textColor="#222222"
+                android:textSize="16sp"/>
+
+            <com.hq.app.olaf.ui.widget.DelEditText
+                android:id="@+id/eidt_pwd"
+                style="@style/input_text"
+                android:layout_width="100dp"
+                android:hint="@string/hint_input"
+                android:inputType="textPassword"
+                android:gravity="left|center"
+                android:maxLength="@integer/pwd_maxlength"
+                android:singleLine="true"
+                android:layout_marginRight="8dp"
+                />
+
+            <ImageView
+                android:id="@+id/eye"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="18dp"
+                android:src="@drawable/icon_eye_close"/>
+        </LinearLayout>
+
+        <TextView style="@style/space"/>
+
+        <LinearLayout
+            android:id="@+id/checkLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/font_size_16">
+
+            <CheckBox
+                android:id="@+id/cb_agree"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/selector_checkbox"
+                android:button="@null"
+                android:checked="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="同意"/>
+
+            <TextView
+                android:id="@+id/protocol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:text="《慧钱注册协议》"
+                android:textColor="@color/colorPrimary"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F3F4F6"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_register"
+                style="@style/colorButtonStyle"
+                android:text="下一步"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

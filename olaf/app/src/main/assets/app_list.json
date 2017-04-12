@@ -1,0 +1,104 @@
+{
+  "apps": [
+    {
+      "id": "multiple_bill",
+      "subTitle": "",
+      "icon": "ic_home_multiple_bill_2x.png",
+      "title": "对账单",
+      "desc": "",
+      "state": 1,
+      "class": "cn.com.cardinfo.model.response.App",
+      "badge": 0,
+      "type": 1,
+      "url": "cardinfo://action/show_app?id=multiple_bill"
+    },{
+      "id": "staff_manage",
+      "subTitle": "",
+      "icon": "ic_home_staff_2x.png",
+      "title": "员工管理",
+      "desc": "",
+      "state": 1,
+      "badge": 0,
+      "type": 1,
+      "url": "cardinfo://action/show_app?id=staff_manage"
+    },{
+      "id": "revenue_data",
+      "subTitle": "",
+      "icon": "ic_home_revenue_data_disabled_2x.png",
+      "title": "数据分析",
+      "desc": "",
+      "state": 1,
+      "class": "cn.com.cardinfo.model.response.App",
+      "badge": 0,
+      "type": 1,
+      "url": "cardinfo://action/show_app?id=revenue_data"
+    },{
+      "id": "card_manage",
+      "subTitle": "",
+      "icon": "ic_home_card_manage_disabled_2x.png",
+      "title": "电子卡管理",
+      "desc": "",
+      "state": 1,
+      "badge": 0,
+      "type": 1,
+      "url": "cardinfo://action/show_app?id=card_manage"
+    },
+    {
+      "id": "coupon_manage",
+      "subTitle": "",
+      "icon": "ic_home_coupon_manage_disabled_2x.png",
+      "title": "优惠券管理",
+      "desc": "",
+      "state": 1,
+      "badge": 0,
+      "type": 1,
+      "url": "cardinfo://action/show_app?id=coupon_manage"
+    },
+    {
+      "id": "send_coupons_center",
+      "subTitle": "",
+      "icon": "ic_home_send_coupons_center_disabled_2x.png",
+      "title": "派券中心",
+      "desc": "",
+      "state": 1,
+      "badge": 0,
+      "type": 1,
+      "url": "cardinfo://action/show_app?id=send_coupons_center"
+    },
+    {
+      "id": "member_center",
+      "subTitle": "",
+      "icon": "ic_home_member_center_disabled_2x.png",
+      "title": "会员中心",
+      "desc": "",
+      "state": 1,
+      "class": "cn.com.cardinfo.model.response.App",
+      "badge": 0,
+      "type": 1,
+      "url": "cardinfo://action/show_app?id=member_center"
+    },
+    {
+      "id": "micro_page_marketing",
+      "subTitle": "",
+      "icon": "ic_home_micro_page_marketing_disabled_2x.png",
+      "title": "微页营销",
+      "desc": "",
+      "state": 1,
+      "class": "cn.com.cardinfo.model.response.App",
+      "badge": 0,
+      "type": 1,
+      "url": "cardinfo://action/show_app?id=micro_page_marketing"
+    }/*,{
+      "id": "more",
+      "subTitle": "",
+      "icon": "ic_home_more_2x.png",
+      "title": "更多",
+      "desc": "",
+      "state": 1,
+      "class": "cn.com.cardinfo.model.response.App",
+      "badge": 0,
+      "type": 1,
+      "url": "cardinfo://action/show_app?id=more"
+    }*/
+  ]
+}

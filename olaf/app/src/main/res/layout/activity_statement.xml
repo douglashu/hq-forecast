@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hq.app.olaf.ui.activity.StatementActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_toolbar"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/background">
+
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="对账日期"/>
+
+                    <TextView
+                        android:id="@+id/statementDate"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="12dp"
+                        android:text="2017-04-06"/>
+
+
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="商家实收"/>
+
+                    <TextView
+                        android:id="@+id/receiptAmount"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="元"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="实收净额"/>
+
+                    <TextView
+                        android:id="@+id/incomeAmount"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="元"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/background"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:textSize="13sp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginLeft="20dp"
+                        android:text="商家实收: 订单金额 - 商家优惠"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginBottom="26dp"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="13sp"
+                        android:text="商家净收: 商家实收 - 服务费(微信、支付宝手续费)"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="订单金额"/>
+
+                    <TextView
+                        android:id="@+id/totalAmount"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="元"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="订单笔数"/>
+
+                    <TextView
+                        android:id="@+id/tradeCount"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="笔"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="微信金额"/>
+
+                    <TextView
+                        android:id="@+id/wxTotalAmount"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="元"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="微信笔数"/>
+
+                    <TextView
+                        android:id="@+id/wxTradeCount"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="笔"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="支付宝金额"/>
+
+                    <TextView
+                        android:id="@+id/aliTotalAmount"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="元"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="支付宝笔数"/>
+
+                    <TextView
+                        android:id="@+id/aliTradeCount"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="笔"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    style="@style/input_layout"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="退款金额"/>
+
+                    <TextView
+                        android:id="@+id/refundAmount"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="元"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="退款笔数"/>
+
+                    <TextView
+                        android:id="@+id/refundCount"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="笔"/>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    style="@style/input_layout"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="服务费"/>
+
+                    <TextView
+                        android:id="@+id/rateFee"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="元"/>
+
+                </LinearLayout>
+
+                <View
+                    style="@style/line_h"/>
+
+                <LinearLayout
+                    style="@style/input_layout">
+
+                    <TextView
+                        style="@style/input_lable"
+                        android:text="退服务费"/>
+
+                    <TextView
+                        android:id="@+id/refundRateFee"
+                        style="@style/input_select_middle"
+                        android:layout_gravity="right"
+                        android:paddingRight="1dp"
+                        android:text=""/>
+
+                    <TextView
+                        style="@style/input_select_unit"
+                        android:layout_gravity="right"
+                        android:text="元"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</RelativeLayout>

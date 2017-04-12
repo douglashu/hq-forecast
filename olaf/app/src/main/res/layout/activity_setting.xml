@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_toolbar"/>
+
+        <RelativeLayout
+            android:id="@+id/tz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+
+            <TextView
+                android:id="@+id/tzlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:padding="16dp"
+                android:text="收款成功通知"
+                android:textSize="@dimen/text_size_medium"
+                android:textColor="@color/black"/>
+
+            <com.hq.app.olaf.ui.widget.PaySucMsgSwitchView
+                android:id="@+id/msgSwitchView"
+                android:layout_width="wrap_content"
+                android:padding="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tzlabel"
+            android:paddingLeft="16dp"
+            android:paddingTop="5dp"
+            android:text="当顾客扫门店/商户码并付款成功时，将收到该通知"
+            android:textSize="@dimen/text_size_minimum"
+            android:textColor="#9A404040"/>
+
+        <com.hq.app.olaf.ui.widget.MenuItemView
+            android:id="@+id/passwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:itemText="修改登录密码"
+            app:showRight="true"
+            app:menuTo="com.hq.app.olaf.ui.activity.passwd.ModifyLoginPwdActivity"/>
+            <Button
+                android:id="@+id/logout"
+                style="@style/logoutButtonStyle"
+                android:layout_marginTop="@dimen/item_space"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:stateListAnimator="@null"
+                android:text="退出登录"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="湖南长沙慧钱科技有限公司"
+            android:textColor="#999"
+            android:visibility="gone"
+            android:textSize="11sp"/>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

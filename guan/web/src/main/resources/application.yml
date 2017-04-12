@@ -1,0 +1,22 @@
+spring:
+#环境 dev product
+  profiles:
+    active: dev
+  data:
+    mongodb:
+      host: ${mongo.host}
+      port: ${mongo.port}
+      database: guan
+  redis:
+    host: ${redis.host}
+    port: ${redis.port}
+  http:
+    encoding:
+      enabled: false
+#端口
+server:
+  port: 8085
+logging:
+  file: log/guan-web.log
+esc:
+  url: ${esc.url}

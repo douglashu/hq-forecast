@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:elevation="3dp"
+        app:popupTheme="@style/Theme.AppCompat.DayNight"
+        app:theme="@style/toolbarTheme2">
+
+        <com.hq.app.olaf.ui.widget.SegmentView
+            android:id="@+id/segmentView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_segment_shape"
+            android:layout_gravity="center">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </com.hq.app.olaf.ui.widget.SegmentView>
+    </android.support.v7.widget.Toolbar>
+
+</RelativeLayout>

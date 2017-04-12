@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/pickDateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center_vertical"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/dateStartLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/dateStartImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_datepicker"/>
+
+                <TextView
+                    android:id="@+id/dateStartText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/dateStartImage"
+                    android:text="开始时间"/>
+
+                <TextView
+                    android:id="@+id/dateStart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dateStartText"
+                    android:layout_margin="6dp"
+                    android:layout_toRightOf="@+id/dateStartImage"
+                    android:text="请选择"
+                    android:textSize="@dimen/font_size_20"/>
+            </RelativeLayout>
+
+            <View style="@style/line_v"/>
+
+            <RelativeLayout
+                android:id="@+id/dateEndLayout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/dateEndImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_datepicker"/>
+
+                <TextView
+                    android:id="@+id/dateEndText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/dateEndImage"
+                    android:text="结束时间"/>
+
+                <TextView
+                    android:id="@+id/dateEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dateEndText"
+                    android:layout_margin="6dp"
+                    android:layout_toRightOf="@+id/dateEndImage"
+                    android:text="请选择"
+                    android:textSize="@dimen/font_size_20"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View style="@style/line_h"/>
+
+        <Button
+            android:id="@+id/queryOrder"
+            style="@style/colorButtonStyle"
+            android:text="确定"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_tip"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="所选时间区域不能超过一个月"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.hq.app.olaf.net.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.hq.uicomponet.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"/>
+</LinearLayout>
